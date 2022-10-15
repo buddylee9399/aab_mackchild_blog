@@ -1,24 +1,29 @@
-# README
+# THINGS IN HERE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## GEMS
 
-Things you may want to cover:
+```
+gem 'devise'
+```
+- devise set for turbo, rails 7
+- from: https://dev.to/efocoder/how-to-use-devise-with-turbo-in-rails-7-9n9
 
-* Ruby version
+## MODELS
+- devise user
+- posts scaffold
+- comment belongs to post added to a do block in routes, with posts
+- validations for posts
 
-* System dependencies
+```
+	validates :title, presence: true, length: {minimum: 5}
+	validates :body,  presence: true
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## OTHER
+- he did his own styling
+- used normalize.css
+- added favicon
+- added a 'mailto' link
+- did an svg logo
+- image in the about page
+- 

@@ -1,27 +1,19 @@
-<%= form_with(model: post) do |form| %>
-  <% if post.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :body, style: "display: block" %>
-    <%= form.text_area :body %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+<%= form_for @post do |f| %>
+	<% if @post.errors.any? %>
+		<div id="errors">
+			<h2><%= pluralize(@post.errors.count, "error") %> prevented this post from saving:</h2>
+			<ul>
+				<% @post.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<%= f.label :title %><br>
+	<%= f.text_field :title %><br>
+	<br>
+	<%= f.label :body %><br>
+	<%= f.text_field :body %><br>
+	<br>
+	<%= f.submit %>
 <% end %>
