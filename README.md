@@ -26,4 +26,14 @@ gem 'devise'
 - added a 'mailto' link
 - did an svg logo
 - image in the about page
-- 
+- if current_page?
+
+```
+      <% if current_page?(root_path) %>
+        <p>All Posts</p>
+      <% elsif current_page?(about_path) %>
+        <p>About</p>
+      <% else %>
+        <%= link_to "Back to All Posts", root_path %>
+      <% end %>
+```
